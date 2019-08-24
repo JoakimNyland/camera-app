@@ -31,6 +31,7 @@ cameraTrigger.onclick = function() {
 function gotResults(error,results){
     alert( results[0].className );
     alert( "Confidence: " + results[0].probability*100 + "%" );
+    alert("HMM");
 }
 
 // Start the video stream when the window loads
