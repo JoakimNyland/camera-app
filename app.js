@@ -24,6 +24,14 @@ cameraTrigger.onclick = function() {
     //cameraSensor.getContext("2d").drawImage(cameraView, 0, 0);
     cameraOutput.src = cameraSensor.toDataURL("image/webp");
     cameraOutput.classList.add("taken");
+    
+    mobilenet = ml5.imageClassifier('MobileNet', function(){mobilenet.predict(cameraOutput,gotResults);});
 };
+
+function gotResults(error,results){
+    alert( results[0].className );
+    alert( "Confidence: " + results[0].probability*100 + "%" );
+}
+
 // Start the video stream when the window loads
 window.addEventListener("load", cameraStart, false);
