@@ -25,7 +25,7 @@ cameraTrigger.onclick = function() {
     cameraOutput.src = cameraSensor.toDataURL("image/webp");
     cameraOutput.classList.add("taken");
     
-    mobilenet = ml5.imageClassifier('MobileNet', function(){mobilenet.predict(cameraOutput,gotResults);});
+   // mobilenet = ml5.imageClassifier('MobileNet', function(){mobilenet.predict(cameraOutput,gotResults);});
 };
 
 function gotResults(error,results){
